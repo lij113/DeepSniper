@@ -1,0 +1,43 @@
+# ========================
+# DeepSniper 系统配置中心
+# ========================
+
+system:
+  project_name: "DeepSniper"
+  log_level: "INFO"
+
+# --- 1. 账户与持仓状态 (每次交易后手动修改这里) ---
+account:
+  # 状态: "HOLDING" (持仓) 或 "EMPTY" (空仓)
+  status: "EMPTY" 
+  
+  # 如果是 HOLDING，填下面：
+  holding_symbol: "603619"
+  holding_cost: 36
+  
+  # 如果是 EMPTY，系统会自动开启全市场扫描
+
+# --- 2. 选股扫描器 (针对空仓时的进攻模式) ---
+scanner:
+  filter_main_board: true # 只看 60x, 00x
+  min_price: 3.0          # 过滤低价股
+  min_turnover: 3.0       # 换手率门槛
+  top_k: 50               # 技术面初筛数量
+
+# --- 3. 策略参数 (MA5单吊战法) ---
+strategy:
+  ma_fast: 5      # 快线 (生命线)
+  ma_slow: 20     # 慢线 (趋势线)
+  volume_ratio: 1.5 # 量比阈值
+  stop_loss_pct: -0.05 # 硬止损
+
+# --- 4. AI 大脑配置 (缺失的部分就是这里！) ---
+llm:
+  # 你的 API Key 在 secrets.env 里，这里配置模型参数
+  model_name: "deepseek-reasoner" 
+  base_url: "https://api.deepseek.com"
+  temperature: 0.6 # 理性模式
+  max_tokens: 4096
+
+data_source:
+  provider: "tushare" # 切换数据源
