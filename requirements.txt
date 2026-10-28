@@ -1,6 +1,4 @@
-openai
-pyyaml
-python-dotenv
+efinance
 pandas
-akshare
-tiktoken
+numpy
+requests

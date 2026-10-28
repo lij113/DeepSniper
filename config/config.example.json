@@ -1,0 +1,41 @@
+{
+    "wxpusher": {
+        "APP_TOKEN": "<你的 WxPusher appToken>",
+        "UID": "<接收推送的 WxPusher UID>"
+    },
+    "deepseek": {
+        "API_KEY": "<你的 DeepSeek API Key>",
+        "BASE_URL": "https://api.deepseek.com",
+        "MODEL": "deepseek-chat",
+        "temperature": 0.1,
+        "max_tokens": 1024,
+        "retries": 3,
+        "request_timeout": 30
+    },
+    "strategy_params": {
+        "SCAN_INTERVAL_MINUTES": 15,
+        "MA_SHORT": 5,
+        "MA_LONG": 20,
+        "VOLUME_MULTIPLE": 1.5,
+        "MAX_POSITION_RATIO": 0.3
+    },
+    "network": {
+        "proxy_api_url": "<代理 IP 提取接口地址，不用代理可删掉这一项>"
+    },
+    "stock_pool_filters": {
+        "min_turnover_amount": 20000000,
+        "max_daily_rise": 4.0,
+        "min_daily_rise": -8.0,
+        "min_turnover_rate": 5.0,
+        "min_volume_ratio": 1.8,
+        "min_rise_for_volume": 0.0,
+        "max_candidates": 120,
+        "rsi_low": 50,
+        "rsi_high": 85,
+        "vol_ma_multiplier": 0.8,
+        "min_adx": 20,
+        "hot_max_daily_rise": 6.0,
+        "hot_volume_ratio": 2.5,
+        "hot_max_candidates": 200
+    }
+}
